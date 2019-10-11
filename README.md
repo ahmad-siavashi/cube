@@ -17,5 +17,9 @@
 
 This section includes my findings on how the CUDA runtime is linked with `PE` files and how the APIs are called.
 
+### vectorAdd
 
+Here are the observations regarding the analysis of `vectorAdd.exe` of CUDA SDK samples.
+
+`Dependency Walker` shows dependence on `kernel32.dll` only. This indicate the possibility for a `static` linkage with the runtime. The corresponding `VS` project investigate then and it turned out that the `/MT` flag for a static linkage is set.
 
