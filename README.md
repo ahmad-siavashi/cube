@@ -23,3 +23,4 @@ Here are the observations regarding the analysis of `vectorAdd.exe` of CUDA SDK 
 
 `Dependency Walker` shows dependence on `kernel32.dll` only. This indicate the possibility for a `static` linkage with the runtime. The corresponding `VS` project investigated and it turned out that the `/MT` flag for a static linkage is set.  
 
+`Process Monitor` shows calls to two `NVIDIA` DLLs located in `System32`. The files are `nvcuda.dll` and `nvfatbinary.dll`.
